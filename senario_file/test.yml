@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 5
+      arrivalRate: 5
+      name: Warm up
+    - duration: 5
+      arrivalRate: 5
+      rampTo: 5
+      name: Ramp up load
+
+scenarios:
+  - name: api test
+    flow:
+      - get:
+          url: "/"
